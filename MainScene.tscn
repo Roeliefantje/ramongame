@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuin7jkh6f18u"]
+
+[ext_resource type="PackedScene" uid="uid://cqigk78n3k2a1" path="res://Player.tscn" id="1_2nhja"]
+[ext_resource type="Script" path="res://SpawnEnemies.gd" id="1_5yaff"]
+[ext_resource type="PackedScene" uid="uid://codn28kymhlbl" path="res://infiniteFloor.tscn" id="1_vchib"]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_5yaff")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_2nhja")]
+z_index = 1
+position = Vector2(0, 140)
+scale = Vector2(0.5, 0.5)
+
+[node name="InfiniteFloor" parent="." instance=ExtResource("1_vchib")]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://codn28kymhlbl"]
+
+[ext_resource type="Script" path="res://infiniteFloor.gd" id="1_ekyok"]
+[ext_resource type="PackedScene" uid="uid://wtkt7by3f6kw" path="res://floor.tscn" id="1_x4twx"]
+
+[node name="InfiniteFloor" type="Node"]
+script = ExtResource("1_ekyok")
+
+[node name="Floor2" parent="." instance=ExtResource("1_x4twx")]
+position = Vector2(0, 500)
+
+[node name="Floor" parent="." instance=ExtResource("1_x4twx")]
+
+[node name="CollisionShape2D" parent="Floor" index="0"]
+visible = true
+
+[node name="MeshInstance2D" parent="Floor" index="1"]
+modulate = Color(0.94902, 0.45098, 0.882353, 1)
+
+[editable path="Floor"]
